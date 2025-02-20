@@ -1,20 +1,15 @@
 #!/usr/bin/python3
 def minOperations(n):
-    """Calculates the fewest number of operations needed to result in exactly n H's."""
-    if n <= 1:
-        return 0
+    if n < 2:
+        return 0  # Impossible case, as we start with one 'H'
     
     operations = 0
-    divisor = 2
-    
-    while n > 1:
-        while n % divisor == 0:
-            operations += divisor
-            n = n // divisor
-        divisor += 1
-    
-    return operations
+    factor = 2  # Start with the smallest prime factor
 
-# Example usage:
-n = 9
-print(minOperations(n))  # Output: 6
+    while n > 1:
+        while n % factor == 0:  # If factor divides n
+            operations += factor  # Add the factor to operations
+            n //= factor  # Reduce n by the factor
+        factor += 1  # Move to the next factor
+
+    return operations
