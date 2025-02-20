@@ -13,4 +13,7 @@ def minOperations(n):
         factor += 1  # Move to the next factor
 
     return operations
- # Move to the next factor
+
+# Example usage:
+n = 9
+print(minOperations(n))  # Output: 6
