@@ -1,5 +1,13 @@
 #!/usr/bin/python3
 
+"""
+Rainwater Retention Calculation Module
+
+This module provides a function to calculate the total amount of rainwater retained after it rains, given a list of non-negative integers representing the heights of walls with unit width 1.
+
+The function `rain` computes the retained water using a dynamic programming approach, ensuring efficient computation even for large input sizes.
+"""
+
 def rain(walls):
     """
     Calculate the total amount of rainwater retained after it rains.
@@ -9,6 +17,11 @@ def rain(walls):
     
     Returns:
         int: Total amount of rainwater retained.
+    
+    Example:
+        >>> walls = [0, 1, 0, 2, 0, 3, 0, 4]
+        >>> rain(walls)
+        6
     """
     if not walls:
         return 0
